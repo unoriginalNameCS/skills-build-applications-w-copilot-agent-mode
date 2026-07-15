@@ -4,7 +4,7 @@ import db from './config/database';
 import apiRouter from './routes';
 
 const app = express();
-const port = Number(process.env.PORT) || 8000;
+const port = 8000;
 
 app.use(express.json());
 app.use('/api', apiRouter);
