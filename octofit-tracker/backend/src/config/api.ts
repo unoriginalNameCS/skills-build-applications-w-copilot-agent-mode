@@ -1,4 +1,4 @@
-const codespaceName = process.env.CODESPACE_NAME;
+const codespaceName = process.env.jubilant_orbit || process.env.CODESPACE_NAME;
 
 export const baseUrl = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev`
