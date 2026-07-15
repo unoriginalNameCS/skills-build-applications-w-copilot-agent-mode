@@ -8,9 +8,6 @@ import './App.css'
 
 function App() {
   const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
-  const apiBaseUrl = codespaceName
-    ? `https://${codespaceName}-8000.app.github.dev/api`
-    : '/api'
 
   const navItems = [
     { to: '/users', label: 'Users' },
@@ -51,26 +48,11 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Navigate to="/users" replace />} />
-          <Route
-            path="/users"
-            element={<Users endpoint={`${apiBaseUrl}/users/`} />}
-          />
-          <Route
-            path="/teams"
-            element={<Teams endpoint={`${apiBaseUrl}/teams/`} />}
-          />
-          <Route
-            path="/activities"
-            element={<Activities endpoint={`${apiBaseUrl}/activities/`} />}
-          />
-          <Route
-            path="/leaderboard"
-            element={<Leaderboard endpoint={`${apiBaseUrl}/leaderboard/`} />}
-          />
-          <Route
-            path="/workouts"
-            element={<Workouts endpoint={`${apiBaseUrl}/workouts/`} />}
-          />
+          <Route path="/users" element={<Users />} />
+          <Route path="/teams" element={<Teams />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/workouts" element={<Workouts />} />
         </Routes>
       </main>
     </div>
